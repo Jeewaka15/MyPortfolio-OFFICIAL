@@ -383,6 +383,39 @@
       position: relative;
       overflow: hidden;
     }
+    .hero-avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin-bottom: 22px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--cyan);
+      box-shadow: 0 0 0 4px rgba(0,245,255,0.1), var(--glow-cyan);
+      display: block;
+    }
+
+    /* Subtle rotating ring around the avatar */
+    .hero-avatar::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 2px dashed rgba(0,245,255,0.3);
+      animation: spinRing 10s linear infinite;
+    }
+
+    @keyframes spinRing {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
 
     /* Floating orbs */
     .orb {
@@ -1399,6 +1432,9 @@
 
         <!-- Left: text content -->
         <div class="hero-content">
+          <div class="hero-avatar">
+            <img src="OFFICIAL PORTFOLIO.jpeg" alt="Jeewaka Jayashan" />
+          </div>
           <p class="hero-greeting">Hello, World!</p>
           <h1 class="hero-name">Jeewaka Jayashan</h1>
 
